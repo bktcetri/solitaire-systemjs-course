@@ -2,9 +2,8 @@ stage 'CI'
 node ('master'){
 
     checkout scm
-    
     //git branch: 'jenkins2-course', 
-      //  url: 'https://github.com/g0t4/solitaire-systemjs-course'
+        //url: 'https://github.com/g0t4/solitaire-systemjs-course'
 
     // pull dependencies from npm
     // on windows use: bat 'npm install'
@@ -37,13 +36,6 @@ node('virtualbox'){
 
 input message: 'Deploy to Prod?'
 
-stage 'Deploy'
-
-node{
-    sh "echo '<h1>${evn.BUILD_DISPLAY_NAME}</h1>' >> app/index.html"
-    
-    sh "echo 'Solitaire Deployed'"
-}
 
 
 
